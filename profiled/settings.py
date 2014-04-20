@@ -97,7 +97,7 @@ TEMPLATE_DIRS = (
 
 AWS_ACCESS_KEY_ID = os.environ.get('AKIAJWX3AVRB6VK3WFJQ')
 AWS_SECRET_ACCESS_KEY = os.environ.get('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')
-AWS_STORAGE_BUCKET_NAME = '<gotto-assests>'
+AWS_STORAGE_BUCKET_NAME = 'gotto-assests'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
@@ -105,9 +105,10 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
+
 # Parse database configuration from $DATABASE_URL
 
-
+DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
