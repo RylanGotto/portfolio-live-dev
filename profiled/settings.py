@@ -122,9 +122,5 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 
 
-MEDIA_ROOT = STATIC_URL
-MEDIA_URL = "static/"
-
-
 
 
